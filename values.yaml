@@ -13,8 +13,6 @@ labels:
 provisioner:
   name: iscsi-targetd
   logLevel: debug
-  fsType: ext4
-  readonly: false
 
 targetd:
   # targetd location
@@ -35,6 +33,12 @@ storageClass:
 
   # name of the storageClass, which could be use in persistentVolumeClaims
   name: iscsi-targetd
+
+  # filesystem to use when formatting new devices
+  fsType: ext4
+
+  # set device as readonly
+  readonly: false
 
   iscsi:
     # iSCSI target IP address, should correspond to the targetd server address

@@ -11,6 +11,6 @@ parameters:
   initiators: {{ .Values.storageClass.iscsi.initiators }}
   chapAuthDiscovery: "false"
   chapAuthSession: "false"
-  fsType: {{ .Values.provisioner.fsType }}
-  readonly: {{ .Values.provisioner.readonly | quote }}
+  fsType: {{ .Values.storageClass.fsType }}
+  readonly: {{ .Values.storageClass.readonly | quote }}
 {{- end }}
