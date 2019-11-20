@@ -51,4 +51,5 @@ storageClass:
     iqn: iqn.2003-01.org.linux-iscsi.k8s:targetd
 
     # comma separated list of possible iSCSI initiators, allowed to attach to created iSCSI LUNs
-    initiators: iqn.2003-01.org.linux-iscsi.k8s:worker1,iqn.2003-01.org.linux-iscsi.k8s:worker2
+    # ie. "iqn.2003-01.org.linux-iscsi.k8s:worker1,iqn.2003-01.org.linux-iscsi.k8s:worker2"
+    initiators: ""
