@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}
+data:
+  # provisioner
+  PROVISIONER_NAME: {{ .Values.provisioner.name }}
+  LOG_LEVEL: {{ .Values.provisioner.logLevel }}
+
+  # access to targetd
+  TARGETD_USERNAME: {{ .Values.targetd.username }}
+  TARGETD_PASSWORD: {{ .Values.targetd.password }}
+  TARGETD_SCHEME: {{ .Values.targetd.scheme }}
+  TARGETD_ADDRESS: {{ .Values.targetd.address }}
+  TARGETD_PORT: {{ .Values.targetd.port | quote }}

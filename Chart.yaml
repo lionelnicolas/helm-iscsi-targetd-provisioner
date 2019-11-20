@@ -1,0 +1,8 @@
+apiVersion: v1
+appVersion: "1.0"
+description: iSCSI-targetd provisioner
+name: iscsi-targetd-provisioner
+version: 0.1.0
+maintainers:
+- name: Lionel Nicolas
+  url: https://github.com/lionelnicolas

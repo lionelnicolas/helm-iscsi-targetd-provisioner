@@ -1,0 +1,30 @@
+timezone: America/Toronto
+
+image:
+  registry: quay.io
+  repository: external_storage/iscsi-controller
+  tag: v0.0.6
+  pullPolicy: Always
+
+labels:
+  component: iscsi
+  partOf: storage
+
+provisioner:
+  name: iscsi-targetd
+  logLevel: debug
+  fsType: ext4
+  readonly: false
+
+targetd:
+  # targetd location
+  scheme: http
+  address: iscsi-target-server.local
+  port: 18700
+
+  # authentication
+  username: admin
+  password: admin
+
+  # LVM volume group, as configured in targetd
+  poolName: vg-targetd
