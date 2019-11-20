@@ -1,0 +1,16 @@
+{{- if .Values.storageClass.enabled }}
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: {{ .Values.storageClass.name }}
+provisioner: {{ .Values.provisioner.name }}
+parameters:
+  targetPortal: {{ .Values.storageClass.iscsi.ipAddress }}:{{ .Values.storageClass.iscsi.port }}
+  iqn: {{ .Values.storageClass.iscsi.iqn }}
+  volumeGroup: {{ .Values.targetd.poolName }}
+  initiators: {{ .Values.storageClass.iscsi.initiators }}
+  chapAuthDiscovery: "false"
+  chapAuthSession: "false"
+  fsType: {{ .Values.provisioner.fsType }}
+  readonly: {{ .Values.provisioner.readonly | quote }}
+{{- end }}

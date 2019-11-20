@@ -28,3 +28,23 @@ targetd:
 
   # LVM volume group, as configured in targetd
   poolName: vg-targetd
+
+storageClass:
+  # set to true to create a storageClass attached to that provisioner
+  enabled: false
+
+  # name of the storageClass, which could be use in persistentVolumeClaims
+  name: iscsi-targetd
+
+  iscsi:
+    # iSCSI target IP address, should correspond to the targetd server address
+    ipAddress: 127.0.0.1
+
+    # iSCSI target port
+    port: 3260
+
+    # iSCSI Qualified Name (IQN), as configured in targetd
+    iqn: iqn.2003-01.org.linux-iscsi.k8s:targetd
+
+    # comma separated list of possible iSCSI initiators, allowed to attach to created iSCSI LUNs
+    initiators: iqn.2003-01.org.linux-iscsi.k8s:worker1,iqn.2003-01.org.linux-iscsi.k8s:worker2
