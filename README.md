@@ -8,7 +8,8 @@ is an out of tree provisioner for iSCSI storage for Kubernetes.
 The provisioner uses the API provided by Open iSCSI [targetd](https://github.com/open-iscsi/targetd)
 to create LVM volumes and export those over iSCSI storage from a remote server.
 
-As prerequisites, an existing iSCSI server managed by `targetd` must be setuped.
+As prerequisites, an existing iSCSI server managed by `targetd` must be available.
+To setup one, you can check that [dockerized targetd](https://github.com/lionelnicolas/docker-targetd).
 
 ## Installing the Chart
 
